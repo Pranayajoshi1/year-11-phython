@@ -1,23 +1,51 @@
-print("hello")
-# Asking for  the user name
+
+QUESTION_FORMAT = "{}\nA. {} B. {} C. {} D. {}"
+# Intro
 name = input("What's your name?")
-# Greet the user  introduce the quizb
-print("Welcome to the quiz.",name)
-print("We are going to play quiz, so be ready for that.")
-# Ask the user a question 
-answer = input("What's the capital city of New Zealand?,")
-# Tell them the correct answer 
-if answer == "Welligiton":
-    print("Correct!")
-print("Question no 2")
-# Ask the user a question 
-input("Who wrote the book Chitty-Chitty-Bang-Bang: The Magical Car?")
-# Tell them the correct answer 
-print("Ian Fleming is the right of question 2")
-print("Question no 3")
-# Ask the user a question 
-input("In which part of your body would you find the cruciate ligament?")
-# Tell them the correct answer 
-print("Kneeis the right of question 3")
-# Game end
+print("Hello! Welcome to the quiz" ,name)
+#Question 1
+play = "yes"
+while play == "yes":
+    score = 0
+    question = "What is the capital of New Zealand?"
+    a = "Wellington"
+    b = "New York"
+    c = "Nepal"
+    d = "Kathmandu"
+    answer  = input(QUESTION_FORMAT.format(question, a, b, c, d)).lower()
+    score += 5
+    if answer.lower() == a or answer.lower() == "a":
+        print("Correct! The answer Wellington")
+    elif answer == "":
+        print("Are you here?")
+    elif answer != a and answer != "a" and answer != b and answer != "b" and answer != c and answer != "c" and answer != d and answer != "d":
+        print("That wasn't an option")
+    else: 
+        print("Sorry! That's incorrect. :(")
+        print("The correct answer is Wellington! Better of luck, next time.")
+    #Question 2
+    answer =input("In which part of your body would you find the cruciate ligament?").upper()
+    if answer == "Knee".upper():
+        print("Correct! The answer is Knee. Good job!")
+        score += 5
+    elif answer == "":
+        print("Are you here?")
+    else: 
+        print("Sorry! That's incorrect. :(")
+        print("The correct answer is Knee! Better luck next time.")
+    #Question 3
+    answer =input("What is the name of the main antagonist in the Shakespeare play Othello??").upper()
+    if answer == "Iago".upper():
+        print("Correct! It is indeed Iago!")
+        score +=5
+    elif answer == "":
+        print("Did something short-circuit?")
+    else:
+        print("Sorry! That's incorrect. :(")
+        print("The correct answer is Iago! Better luck next time.")
+    # Ending
+    print("Good job {}! Thank you so much for answering my quiz! Your final score {} out of 15".format(name, score)) 
+    play = input("Do you want to play again?").lower()
+
+print("Oh okay! Goodbye then! ^_^")
 print(" Game end. Thank you for playing")
