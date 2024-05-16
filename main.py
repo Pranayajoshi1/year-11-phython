@@ -2,7 +2,16 @@ import random
 GOOD_COMMENTS = ["Way to go!", "Keep it up!" , "Fantastic"]
 BAD_COMMENTS = ["keep trying", "Maybe next time", "Don't give up"]
 QUESTION_FORMAT = "{}\nA. {} B. {} C. {} D. {}"
-# Intro
+QUESTIONS = ["What is the capital of New Zealand?",
+            "In which part of your body would you find the cruciate ligament?",
+            "What is the name of the main antagonist in the Shakespeare play Othello??"
+            ]
+OPTIONS = [[ "Wellington" "New York" "Nepal" "Kathmandu"]
+          [ "Knee" "Hand" "Nail"  "Hair"]
+          [ "Shawn" "UGO" "Steve" "Iago"]]
+SHORT_OPTIONS = [ "a", "b", "c", "d"]
+ANSWERS = [1,2,4]
+# Intro/
 name = input("What's your name?")
 print("Hello! Welcome to the quiz" ,name)
 while True:
