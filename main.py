@@ -13,7 +13,7 @@ OPTIONS =  [[ "Wellington", "New York", "Nepal", "Kathmandu"],
 SHORT_OPTIONS = [ "a", "b", "c", "d"]
 ANSWERS = [0,2,4]
 play = "yes"
-# Intro
+# ---------INTRO------------
 name = input("What's your name?")
 print("Hello! Welcome to the quiz" ,name)
 while True:
@@ -24,17 +24,14 @@ while True:
     except:
         print("That's not a number unfortunately. Maybe type 1, 2 or 3.")
 
-#start the quiz
+#--------START THE QUIZ----------
     while play == "yes":
         score = 0
-#loop through each question/answer
+#-------LOOP THROUGH EACH QUESTION/ANSWER--------
 for i in range(len(QUESTIONS)):
     question_attempts = tries
     while question_attempts > 0:
-        #Askthe user a question
-        answer = input(QUESTION_FORMAT.format(QUESTIONS[i], OPTIONS [i][0],
-                                              OPTIONS[i][1], OPTIONS[i][2], OPTIONS[i][3])).lower()
-        # Check the user's answer
+#-------CHECK THE USER'S ANSWER--------------|
         if answer == OPTIONS[i][ANSWERS[i]] or answer == SHORT_OPTIONS[ANSWERS[i]]:
             print("Correct")
             score += 5
@@ -50,9 +47,9 @@ for i in range(len(QUESTIONS)):
         print("That wasn't an option")
         question_attempts -= 1
         print("The answer is Wellington")
-    #Ending
+#----------ENDING---------
     print("Well done {}. You finished the quiz. Your final score is {}".format(name, score))
-    #Replay
+#----------REPLAY---------
     play = input("Do you want to play again?").lower()
 
 print("Oh okay! Goodbye then! ^_^")
